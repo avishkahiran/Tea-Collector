@@ -47,7 +47,7 @@ React.useEffect(() => {
   return (
     <View style={styles.container}>
       <Image style={styles.logoStyle} source={logo} />
-      <Text style={styles.txtStyle}>Add Tea Collection Details</Text>
+      <Text style={styles.txtStyle}>Update Tea Collection Details</Text>
 
       <TextInput
         style={styles.txtInputSyl}
