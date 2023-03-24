@@ -17,6 +17,7 @@ import FinanceHome from "./components/FinanceHome";
 import AddPrice from "./components/AddPrice";
 import LorrySellingList from "./components/LorrySellingList";
 import PriceList from "./components/PriceList";
+import EditPrice from "./components/Price/EditPrice";
 import GenarateReport from "./components/GenarateReport";
 
 import SellerHome from "./components/SellerHome";
@@ -37,6 +38,8 @@ import AddLorrySellingDetails from "./components/AddLorrySellingDetails";
 
 import * as React from 'react';
 import FinanceManager from "./components/FinanceManger/FinanceManager";
+
+import EditLorrySellingDetails from "./components/Selling/EditLorrySellingDetails";
 
 export default function App() {
   return (
@@ -123,6 +126,17 @@ export default function App() {
           component={EditRoute}
         />
         
+        <Stack.Screen
+          name="EditSeller"
+          options={{
+            headerStyle: { backgroundColor: "#09B44D" },
+            headerTintColor: "#fff",
+            title: "Collector",
+            headerTitle: (props) => <LogoTitle {...props} />,
+          }}
+          component={EditLorrySellingDetails}
+        />
+
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen
           name="ChoseAuth"
@@ -179,6 +193,11 @@ export default function App() {
           component={SellerHome}
         />
         
+
+        <Stack.Screen
+          name="EditPrice"
+          component={EditPrice}
+        />
 
         <Stack.Screen
           name="LorryRequest"

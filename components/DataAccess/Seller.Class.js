@@ -22,14 +22,27 @@ export default class Seller {
     return 1;
   }
 
-  async getSeller() {
-    const result = await this.ref.get();
-    return result;
+  async getSeller(id) {
+    const result = await this.ref.doc(id).get();
+    return result.data();
   }
 
   async getAll(){
     const result = await this.ref.get();
     return result;
+  }
+
+  async updatePrice(id){
+    const data = {
+      sellerID : this.sellerID,
+      address : this.address,
+      weight : this.weight,
+      date : this.date
+    };
+    let result = null;
+    result = await this.ref.doc(id).update(data);
+    return 1;
+
   }
 
   async delete(id){

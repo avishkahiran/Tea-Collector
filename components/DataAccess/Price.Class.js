@@ -22,9 +22,22 @@ export default class Price {
     return 1;
   }
 
-  async getPrice() {
-    const result = await this.ref.get();
-    return result;
+  async updatePrice(id){
+    const data = {
+      name: this.name,
+      date: this.date,
+      weight: this.weight,
+      price: this.price,
+    };
+    let result = null;
+    result = await this.ref.doc(id).update(data);
+    return 1;
+
+  }
+
+  async getPrice(id) {
+    const result = await this.ref.doc(id).get();
+    return result.data();
   }
 
   async getAll(){
